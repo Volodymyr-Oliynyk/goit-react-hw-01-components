@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 
 export default function Profile( props ) {
     const {username, tag, location, avatar, stats} = props;
@@ -33,3 +33,11 @@ export default function Profile( props ) {
 </div>
   );
 }
+
+Profile.propTypes = {
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.object
+};
