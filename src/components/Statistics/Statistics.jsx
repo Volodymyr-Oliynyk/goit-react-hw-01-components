@@ -19,5 +19,5 @@ export default function Statistics({ title, stats }) {
 
 Statistics.propTypes = {
   title: PropTypes.string.isRequired,
-  stats: PropTypes.arrayOf(PropTypes.object).isRequired,
+  stats: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
