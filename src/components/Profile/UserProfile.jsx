@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Container } from 'components/common/Container';
 
 export default function Profile(props) {
   const { username, tag, location, avatar, stats } = props;
-  return (
-    <div class="profile">
+  return <Container>
+    
       <div class="description">
         <img src={avatar} alt={username} class="avatar" />
         <p class="name">{username}</p>
@@ -26,8 +27,10 @@ export default function Profile(props) {
           <span class="quantity"> {stats.likes}</span>
         </li>
       </ul>
-    </div>
-  );
+    
+  
+  </Container>
+    
 }
 
 Profile.propTypes = {
