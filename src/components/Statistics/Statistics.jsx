@@ -1,19 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  StatisticsCard,
+  Title,
+  StatList,
+  StatItem,
+  LineText,
+} from './StatisticsStyled';
 
 export default function Statistics({ title, stats }) {
   return (
-    <section className="statistics">
-      <h2>{title}</h2>
-      <ul>
+    <StatisticsCard>
+      <Title>{title}</Title>
+      <StatList>
         {stats.map(({ id, label, percentage }) => (
-          <li key={id}>
-            <span className="label">{label}</span>
-            <span className="percentage">{percentage}%</span>
-          </li>
+          <StatItem key={id}>
+            <LineText>{label}</LineText>
+            <LineText>{percentage}%</LineText>
+          </StatItem>
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </StatisticsCard>
   );
 }
 

@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TransactionTable, Thead, Tbody } from './TransactionHistoryStyled';
 
 export default function TransactionHistory(props) {
   return (
-    <table class="transaction-history">
-      <thead>
+    <TransactionTable>
+     <Thead>
         <tr>
           <th>Type</th>
           <th>Amount</th>
           <th>Currency</th>
         </tr>
-      </thead>
-      <tbody>
+        </Thead>
+      <Tbody>
         {props.transactions.map(({ id, type, amount, currency }) => (
           <tr key={id}>
             <td>{type}</td>
@@ -19,8 +20,8 @@ export default function TransactionHistory(props) {
             <td>{currency}</td>
           </tr>
         ))}
-      </tbody>
-    </table>
+     </Tbody>
+    </TransactionTable>
   );
 }
 

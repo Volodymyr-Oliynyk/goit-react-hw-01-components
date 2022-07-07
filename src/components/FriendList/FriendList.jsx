@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FriendListItem from './FriendListItem';
+import { FriendContainer } from './FrendlistStyle';
 
 export default function FriendList({ friends }) {
   return (
-    <ul className="friend-list">
+    <FriendContainer>
       {friends.map(friend => (
         <FriendListItem key={friend.id} {...friend} />
       ))}
-    </ul>
+    </FriendContainer>
   );
 }
 

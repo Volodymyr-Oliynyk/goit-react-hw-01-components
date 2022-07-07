@@ -6,23 +6,33 @@ import FriendList from './FriendList/FriendList';
 import friends from '../data/friends';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 import transactions from '../data/transactions';
+import { Section } from './common/Section';
+import { Body } from './common/Body';
 
 export const App = () => {
   return (
-    <div>
-      <Profile
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
-      />
+    <Body>
+      <Section>
+        <Profile
+          username={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
+        />
+      </Section>
 
-      <Statistics title="Upload stats" stats={data} />
+      <Section>
+        <Statistics title="Upload stats" stats={data} />
+      </Section>
 
-      <FriendList friends={friends} />
+      <Section>
+        <FriendList friends={friends} />
+      </Section>
 
-      <TransactionHistory transactions={transactions} />
-    </div>
+      <Section>
+        <TransactionHistory transactions={transactions} />
+      </Section>
+    </Body>
   );
 };
